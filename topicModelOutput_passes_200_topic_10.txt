@@ -1,0 +1,22 @@
+[
+  (0,
+  '0.040*"autism" + 0.038*"year" + 0.030*"old" + 0.022*"autist" + 0.019*"son" + 0.014*"show" + 0.012*"asd" + 0.011*"stori"'),
+  (1,
+  '0.065*"autism" + 0.031*"parent" + 0.028*"child" + 0.028*"s" + 0.026*"autist" + 0.024*"nt" + 0.023*"love" + 0.022*"kid"'),
+  (2,
+  '0.050*"m" + 0.040*"think" + 0.024*"make" + 0.020*"peopl" + 0.015*"realli" + 0.015*"like" + 0.013*"get" + 0.013*"aspi"'),
+  (3,
+  '0.050*"autism" + 0.045*"autist" + 0.042*"peopl" + 0.029*"adult" + 0.025*"talk" + 0.025*"spectrum" + 0.019*"differ" + 0.016*"live"'),
+  (4,
+  '0.115*"asperg" + 0.080*"s" + 0.027*"post" + 0.027*"r" + 0.019*"job" + 0.014*"just" + 0.014*"book" + 0.012*"x"'),
+  (5,
+  '0.036*"question" + 0.023*"aspi" + 0.022*"brain" + 0.021*"function" + 0.020*"rant" + 0.020*"autism" + 0.020*"high" + 0.016*"interest"'),
+  (6,
+  '0.059*"help" + 0.048*"need" + 0.037*"autism" + 0.022*"advic" + 0.017*"hate" + 0.016*"pleas" + 0.016*"s" + 0.015*"relationship"'),
+  (7,
+  '0.072*"anyon" + 0.060*"feel" + 0.047*"els" + 0.047*"like" + 0.032*"thing" + 0.015*"peopl" + 0.015*"issu" + 0.014*"aspi"'),
+  (8,
+  '0.026*"autism" + 0.023*"guy" + 0.016*"meltdown" + 0.013*"week" + 0.012*"anybodi" + 0.011*"time" + 0.010*"final" + 0.010*"son"'),
+  (9,
+  '0.078*"t" + 0.038*"know" + 0.035*"don" + 0.030*"can" + 0.029*"want" + 0.027*"dae" + 0.018*"someon" + 0.017*"get"')
+]
