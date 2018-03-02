@@ -6,6 +6,7 @@ from stop_words import get_stop_words
 from gensim.models import Phrases
 from pprint import pprint
 from gensim.models import LdaModel
+from gensim.models import LdaMulticore
 from gensim.models import HdpModel
 import gensim
 import copy
@@ -13,6 +14,8 @@ import csv
 from datetime import datetime
 import pyLDAvis.gensim as gensimvis
 import pyLDAvis
+import logging
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 writeFileTokens = open('output/post_comment_tokens.csv', 'w+')
 writeFileStopWordRemoved = open('output/post_comment_after_stopwords.csv', 'w+')
@@ -114,28 +117,28 @@ print('Number of documents: %d' % len(corpus))
 # Train LDA model.
 
 # Set training parameters.
-num_topics = 10
-chunksize = 2000
-passes = 3
-iterations = 40
+num_topics = 15
+chunksize = 20000
+passes = 20
+iterations = 400
 eval_every = None  # Don't evaluate model perplexity, takes too much time.
 
 # Make a index to word dictionary.
 temp = dictionary[0]  # This is only to "load" the dictionary.
 id2word = dictionary.id2token
 
-'''
-#model = LdaModel(corpus=corpus, id2word=id2word, chunksize=chunksize, \
+
+model = LdaMulticore(corpus=corpus, id2word=id2word, chunksize=chunksize, \
                        alpha='auto', eta='auto', \
                        iterations=iterations, num_topics=num_topics, \
-                       passes=passes, eval_every=eval_every)
-'''
+                       passes=passes, eval_every=eval_every, workers=3)
+
 
 #model = LdaModel(corpus, num_topics=num_topics, id2word = id2word, passes=passes)
-#model.save('reddit_autism_pass3_topic10_lda.model')
+model.save('reddit_autism_pass20_topic15_iter400_lda.model')
 
-hdp = HdpModel(corpus, dictionary)
-hdp.save('reddit_autism_hdp.model')
+#hdp = HdpModel(corpus, dictionary)
+#hdp.save('reddit_autism_hdp.model')
 
 print(model.print_topics(num_topics=num_topics, num_words=12))
 print("Program Ended at: " + str(datetime.now()))
